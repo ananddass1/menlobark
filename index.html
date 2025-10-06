@@ -1,0 +1,1200 @@
+            .services-grid {
+                min-width: 100%;
+            }
+
+            .services-photos,
+            .review-photos {
+                justify-content: center;
+            }
+
+            .about-photo-frame,
+            .service-photo-frame,
+            .review-photo-frame {
+                width: 150px;
+                height: 150px;
+            }
+
+            .review-photo-frame {
+                width: 140px;
+            }            .reviews-grid {
+                grid-template-columns: 1fr;
+            }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenloBark - Professional Dog Sitting in the Bay Area</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 50%, rgba(253, 200, 48, 0.95) 100%),
+                        url('YOUR_HERO_IMAGE_URL_HERE') center/cover no-repeat;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🐕';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #00D9FF;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #00B8D4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* About Section */
+        .about {
+            background: #FFF9E6;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-images {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-photo-frame {
+            width: 200px;
+            height: 200px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .about-photo-frame:hover {
+            transform: rotate(2deg) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-photo-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFE5E5 0%, #E8F5FF 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-photo-text {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.25em;
+            color: rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 50%, rgba(253, 200, 48, 0.9) 100%),
+                        url('YOUR_ANJAY_WITH_DOG_IMAGE_URL_HERE') center/cover no-repeat;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 5px solid white;
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: left;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+            position: relative;
+        }
+
+        .services h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-with-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .services-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .services-photos {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .service-photo-frame {
+            width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .service-photo-frame:hover {
+            transform: rotate(-2deg) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-photo-inner {
+            width: 100%;
+            padding-bottom: 75%;
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFE5E5 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-photo-text {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.3em;
+            color: rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+
+        .service-photo-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card:nth-child(2) {
+            background: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);
+        }
+
+        .service-card:nth-child(3) {
+            background: linear-gradient(135deg, #FFD93D 0%, #F7931E 100%);
+        }
+
+        .service-card:nth-child(4) {
+            background: linear-gradient(135deg, #6BCF7F 0%, #4CAF50 100%);
+        }
+
+        .service-card:nth-child(5) {
+            background: linear-gradient(135deg, #A855F7 0%, #9333EA 100%);
+        }
+
+        .service-card:nth-child(6) {
+            background: linear-gradient(135deg, #FF4B91 0%, #EC4899 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFF9E6 100%);
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            margin-bottom: 30px;
+        }
+
+        .price-box {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+            border: 3px solid #FFD93D;
+        }
+
+        .price {
+            font-size: 4em;
+            color: #00D9FF;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-box p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, #E8F5FF 0%, #FFF9E6 100%);
+        }
+
+        .reviews h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        .review-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #00D9FF;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .review-stars {
+            color: #FFD93D;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #FF6B35;
+            font-size: 1.1em;
+            text-align: right;
+        }
+
+        .review-photos {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .review-photo-frame {
+            width: 200px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .review-photo-frame:hover {
+            transform: rotate(-2deg) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .review-photo-frame:nth-child(even):hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+
+        .review-photo-inner {
+            width: 100%;
+            padding-bottom: 100%;
+            background: linear-gradient(135deg, #FFF9E6 0%, #E8F5FF 100%);
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+        }
+
+        .review-photo-text {
+            position: absolute;
+            bottom: 8px;
+            font-size: 0.3em;
+            color: rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+
+        .review-photo-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Photo Gallery Section */
+        .gallery {
+            background: white;
+        }
+
+        .gallery h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .gallery-item:nth-child(even):hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+        .gallery-inner {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            background: linear-gradient(135deg, #E8F5FF 0%, #FFE5E5 100%);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .gallery-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: rgba(255, 107, 53, 0.3);
+        }
+
+        .gallery-placeholder-text {
+            font-size: 0.3em;
+            color: rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .gallery-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+        }
+
+        .faq h2 {
+            font-size: 2.5em;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            background: #FFF9E6;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #FFD93D;
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #F7931E 0%, #FFD93D 100%);
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FFD93D;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF6B35;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #0099CC 0%, #00D9FF 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                width: 200px;
+                height: 200px;
+                font-size: 80px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <p style="font-size: 1.2em; margin-bottom: 10px; font-weight: 500;">🐾 Where Every Dog is Family 🐾</p>
+        <h1>🐾 MenloBark 🐾</h1>
+        <p>Professional Dog Sitting Services in the Bay Area</p>
+        <a href="#contact" class="cta-button">Book Your Dog's Stay</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Meet Anjay</h2>
+            <div class="about-content">
+                <div class="about-images">
+                    <div class="about-photo-frame">
+                        <div class="about-photo-inner">
+                            🐕
+                            <div class="about-photo-text">Add Photo</div>
+                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"> -->
+                        </div>
+                    </div>
+                    <div class="about-photo-frame">
+                        <div class="about-photo-inner">
+                            🐶
+                            <div class="about-photo-text">Add Photo</div>
+                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p><strong>Hi! I'm Anjay,</strong> a young dog-loving middle schooler who has been caring for dogs for 2 years. I absolutely love dogs and everything about them!</p>
+                    <p>I started MenloBark because I'm passionate about caring for dogs while their owners are away. As an entrepreneur at heart, I combined my love for dogs with my business spirit to create a service that treats every pup like family.</p>
+                    <p>Your furry friend will receive lots of love, attention, playtime, and cuddles in our big backyard where they can run, play, and relax!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-with-photos">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🚶</div>
+                        <h3>Dog Walking</h3>
+                        <p>Regular walks to keep your pup active, healthy, and happy. We'll explore the neighborhood and get plenty of exercise!</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Short & Long-Term Sitting</h3>
+                        <p>Whether it's a weekend getaway or an extended vacation, your dog will be loved and cared for in our home.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📸</div>
+                        <h3>Daily Updates</h3>
+                        <p>You'll receive photos and videos every day so you can see your furry friend having the time of their life!</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🍖</div>
+                        <h3>Feeding & Care</h3>
+                        <p>Strict adherence to your dog's feeding schedule and dietary needs. Your pup's routine stays consistent!</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚽</div>
+                        <h3>Playtime & Exercise</h3>
+                        <p>Active play sessions to keep your dog fit, mentally stimulated, and entertained throughout the day.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💚</div>
+                        <h3>Cuddles & Love</h3>
+                        <p>Lots of affection, belly rubs, and quality time. Plus, access to our big backyard for outdoor fun and relaxation!</p>
+                    </div>
+                </div>
+                
+                <div class="services-photos">
+                    <div class="service-photo-frame">
+                        <div class="service-photo-inner">
+                            🦮
+                            <div class="service-photo-text">Add Photo</div>
+                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="service-photo-image"> -->
+                        </div>
+                    </div>
+                    <div class="service-photo-frame">
+                        <div class="service-photo-inner">
+                            🐕‍🦺
+                            <div class="service-photo-text">Add Photo</div>
+                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="service-photo-image"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="price-box">
+                <h3>Dog Sitting</h3>
+                <div class="price">$45</div>
+                <p>per night</p>
+                <p style="margin-top: 20px;">Includes all services: walking, feeding, playtime, cuddles, daily updates, and access to our big backyard!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2>What Dog Parents Say</h2>
+            <div class="reviews-grid">
+                <!-- Review 1 with photos -->
+                <div class="review-container">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-text">
+                            "Anjay and his family have taken care of our dog Yuzu many many times, and we have been deeply impressed by not only his level of care, but also his very communicative style of pet sitting. While other sitters will sometimes send a photo or two and a line about recent activities, we are always delighted to receive Anjay's daily 'pupdates' that include many photos and often a full paragraph recounting each day's events. If you are a chronic worrying pet parent like us, your doggo is in great hands with Anjay, and we highly recommend his service."
+                        </div>
+                        <div class="review-author">— Yuzu's Owners</div>
+                    </div>
+                    <div class="review-photos">
+                        <div class="review-photo-frame">
+                            <div class="review-photo-inner">
+                                🐕
+                                <div class="review-photo-text">Add Photo</div>
+                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                            </div>
+                        </div>
+                        <div class="review-photo-frame">
+                            <div class="review-photo-inner">
+                                🐶
+                                <div class="review-photo-text">Add Photo</div>
+                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 with photos -->
+                <div class="review-container">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-text">
+                            "Leaving our dog, Charlie, is always hard, but Anjay made the entire experience stress-free and wonderful. The absolute best part was the communication. We received detailed daily updates, with photos and cute little videos, which instantly put our minds at ease. Knowing that Charlie was happy, playing, and getting all the snuggles he needed made our trip so much more relaxing. Beyond the perfect updates, Anjay is incredibly kind and treated Charlie like his own. He followed every single one of our instructions—from the feeding schedule to the walking times—without missing a beat. He clearly loves what he does, and his dedication truly went above and beyond our expectations. If you are looking for a dog sitter who is reliable, communicative, and genuinely cares about your pet, stop searching! If you live in the bay area, you absolutely must book Anjay!"
+                        </div>
+                        <div class="review-author">— Charlie's Owners</div>
+                    </div>
+                    <div class="review-photos">
+                        <div class="review-photo-frame">
+                            <div class="review-photo-inner">
+                                🦮
+                                <div class="review-photo-text">Add Photo</div>
+                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                            </div>
+                        </div>
+                        <div class="review-photo-frame">
+                            <div class="review-photo-inner">
+                                🐕‍🦺
+                                <div class="review-photo-text">Add Photo</div>
+                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Happy Pups Gallery 📸</h2>
+            <div class="gallery-grid">
+                <!-- Photo 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🐕
+                            <div class="gallery-placeholder-text">Add Photo 1</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🐶
+                            <div class="gallery-placeholder-text">Add Photo 2</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🦮
+                            <div class="gallery-placeholder-text">Add Photo 3</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🐕‍🦺
+                            <div class="gallery-placeholder-text">Add Photo 4</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🐩
+                            <div class="gallery-placeholder-text">Add Photo 5</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="gallery-item">
+                    <div class="gallery-inner">
+                        <div class="gallery-placeholder">
+                            🐕
+                            <div class="gallery-placeholder-text">Add Photo 6</div>
+                        </div>
+                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What are your prices?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Our dog sitting service is $45 per night, which includes comprehensive care: walking, feeding, playtime, daily photo and video updates, cuddles, and full access to our spacious backyard where your dog can run, play, and relax throughout their stay.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you do short-term and long-term stays?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! We accommodate both short-term stays (a night or a weekend) and long-term stays (weeks or longer). Whether you're going away for a quick trip or an extended vacation, your furry friend is welcome to stay with us for as long as needed.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What should I bring for my dog?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Please bring the following items to ensure your dog feels comfortable and at home:
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Required:</strong> Food, food and water bowls, leash, poop bags, and any medication (if applicable)</li>
+                        <li><strong>Important:</strong> Veterinarian contact information and pet insurance details</li>
+                        <li><strong>Optional:</strong> Favorite toys, bed or blanket, and wipes for easy cleanup</li>
+                    </ul>
+                    Having familiar items helps your dog feel more comfortable during their stay!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer shower or grooming services?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    No, we do not currently offer bathing or grooming services. We focus on providing excellent care, playtime, exercise, and lots of love for your dog. We recommend scheduling grooming appointments with a professional groomer before or after your dog's stay with us.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can you pet sit at our house?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Unfortunately, no. At this time, we only offer dog sitting services at our home. This allows us to provide the best possible care in a safe, controlled environment where your dog can enjoy our big backyard and receive constant attention and supervision.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Why did you start this business?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    I started MenloBark because I genuinely love dogs and find so much joy in caring for them while their owners are away. Knowing that families can relax on their trips while their furry friends are happy and well-cared-for brings me great satisfaction. I'm also an entrepreneur at heart, so I combined my passion for dogs with my love of business to create something meaningful. Every dog that stays with me becomes part of my extended family!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Book Your Dog's Stay</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="ownerName">Your Name *</label>
+                    <input type="text" id="ownerName" name="ownerName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dogName">Dog's Name *</label>
+                    <input type="text" id="dogName" name="dogName" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date *</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date *</label>
+                        <input type="date" id="endDate" name="endDate" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="breed">Breed *</label>
+                        <input type="text" id="breed" name="breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Size *</label>
+                        <select id="size" name="size" required>
+                            <option value="">Select size</option>
+                            <option value="small">Small (under 25 lbs)</option>
+                            <option value="medium">Medium (25-50 lbs)</option>
+                            <option value="large">Large (50-100 lbs)</option>
+                            <option value="xlarge">Extra Large (over 100 lbs)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age of Dog *</label>
+                        <input type="text" id="age" name="age" placeholder="e.g., 3 years" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pottyTrained">Potty Trained? *</label>
+                        <select id="pottyTrained" name="pottyTrained" required>
+                            <option value="">Select option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="mostly">Mostly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="indoorOutdoor">Indoor or Outdoor Dog? *</label>
+                    <select id="indoorOutdoor" name="indoorOutdoor" required>
+                        <option value="">Select option</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="behaviors">Common Behaviors & Personality *</label>
+                    <textarea id="behaviors" name="behaviors" placeholder="Tell us about your dog's personality, behaviors, likes, dislikes, and any special notes..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Your Phone Number *</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Your Email Address *</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Booking Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>MenloBark Dog Sitting</strong></p>
+            <p>Serving Palo Alto, Menlo Park, Atherton & surrounding Bay Area</p>
+            <p style="margin-top: 15px;">🐾 Where Every Dog is Family 🐾</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            alert('Thank you for your booking request! We will contact you soon at ' + data.contactEmail + ' to confirm the details.');
+            
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
