@@ -1,24 +1,4 @@
-            .services-grid {
-                min-width: 100%;
-            }
-
-            .services-photos,
-            .review-photos {
-                justify-content: center;
-            }
-
-            .about-photo-frame,
-            .service-photo-frame,
-            .review-photo-frame {
-                width: 150px;
-                height: 150px;
-            }
-
-            .review-photo-frame {
-                width: 140px;
-            }            .reviews-grid {
-                grid-template-columns: 1fr;
-            }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,10 +17,8 @@
             color: #333;
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 50%, rgba(253, 200, 48, 0.95) 100%),
-                        url('YOUR_HERO_IMAGE_URL_HERE') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 50%, rgba(253, 200, 48, 0.95) 100%);
             color: white;
             padding: 100px 20px;
             text-align: center;
@@ -77,25 +55,13 @@
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .cta-button {
@@ -117,14 +83,12 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        /* About Section */
         .about {
             background: #FFF9E6;
             text-align: center;
@@ -180,28 +144,6 @@
             overflow: hidden;
         }
 
-        .about-photo-text {
-            position: absolute;
-            bottom: 10px;
-            font-size: 0.25em;
-            color: rgba(0,0,0,0.4);
-            font-weight: bold;
-        }
-
-        .about-image {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 50%, rgba(253, 200, 48, 0.9) 100%),
-                        url('YOUR_ANJAY_WITH_DOG_IMAGE_URL_HERE') center/cover no-repeat;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 120px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 5px solid white;
-        }
-
         .about-text {
             flex: 1;
             text-align: left;
@@ -214,10 +156,8 @@
             line-height: 1.8;
         }
 
-        /* Services Section */
         .services {
             background: white;
-            position: relative;
         }
 
         .services h2 {
@@ -243,10 +183,8 @@
 
         .services-photos {
             display: flex;
-            flex-direction: row;
             gap: 20px;
             justify-content: center;
-            margin-top: 30px;
         }
 
         .service-photo-frame {
@@ -268,20 +206,12 @@
             padding-bottom: 75%;
             background: linear-gradient(135deg, #FFF9E6 0%, #FFE5E5 100%);
             border-radius: 5px;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-photo-text {
-            position: absolute;
-            bottom: 10px;
-            font-size: 0.3em;
-            color: rgba(0,0,0,0.4);
-            font-weight: bold;
         }
 
         .service-photo-image {
@@ -343,7 +273,6 @@
             line-height: 1.6;
         }
 
-        /* Pricing Section */
         .pricing {
             background: linear-gradient(135deg, #FFE5E5 0%, #FFF9E6 100%);
             text-align: center;
@@ -378,7 +307,6 @@
             color: #666;
         }
 
-        /* Reviews Section */
         .reviews {
             background: linear-gradient(135deg, #E8F5FF 0%, #FFF9E6 100%);
         }
@@ -475,14 +403,6 @@
             font-size: 2.5em;
         }
 
-        .review-photo-text {
-            position: absolute;
-            bottom: 8px;
-            font-size: 0.3em;
-            color: rgba(0,0,0,0.4);
-            font-weight: bold;
-        }
-
         .review-photo-image {
             position: absolute;
             top: 0;
@@ -492,7 +412,6 @@
             object-fit: cover;
         }
 
-        /* Photo Gallery Section */
         .gallery {
             background: white;
         }
@@ -538,27 +457,6 @@
             overflow: hidden;
         }
 
-        .gallery-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            color: rgba(255, 107, 53, 0.3);
-        }
-
-        .gallery-placeholder-text {
-            font-size: 0.3em;
-            color: rgba(0, 0, 0, 0.4);
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
         .gallery-image {
             position: absolute;
             top: 0;
@@ -568,7 +466,6 @@
             object-fit: cover;
         }
 
-        /* FAQ Section */
         .faq {
             background: white;
         }
@@ -625,7 +522,6 @@
             transform: rotate(180deg);
         }
 
-        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%);
             color: white;
@@ -710,7 +606,6 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, #333 0%, #222 100%);
             color: white;
@@ -722,42 +617,35 @@
             font-size: 1.1em;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5em;
             }
-
             .hero p {
                 font-size: 1.2em;
             }
-
             .about-content {
                 flex-direction: column;
             }
-
             .about-text {
                 text-align: center;
             }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
-
-            .about-image {
-                width: 200px;
-                height: 200px;
-                font-size: 80px;
-            }
-
             .reviews-grid {
                 grid-template-columns: 1fr;
+            }
+            .about-photo-frame,
+            .service-photo-frame,
+            .review-photo-frame {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="hero">
         <p style="font-size: 1.2em; margin-bottom: 10px; font-weight: 500;">🐾 Where Every Dog is Family 🐾</p>
         <h1>🐾 MenloBark 🐾</h1>
@@ -765,7 +653,6 @@
         <a href="#contact" class="cta-button">Book Your Dog's Stay</a>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container">
             <h2>Meet Anjay</h2>
@@ -773,29 +660,24 @@
                 <div class="about-images">
                     <div class="about-photo-frame">
                         <div class="about-photo-inner">
-                            🐕
-                            <div class="about-photo-text">Add Photo</div>
-                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"> -->
+                            <img src="images/CPet.jpg" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="about-photo-frame">
                         <div class="about-photo-inner">
-                            🐶
-                            <div class="about-photo-text">Add Photo</div>
-                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"> -->
+                            <img src="images/Y Sun2.jpeg" alt="Dog" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                 </div>
                 <div class="about-text">
                     <p><strong>Hi! I'm Anjay,</strong> a young dog-loving middle schooler who has been caring for dogs for 2 years. I absolutely love dogs and everything about them!</p>
-                    <p>I started MenloBark because I'm passionate about caring for dogs while their owners are away. As an entrepreneur at heart, I combined my love for dogs with my business spirit to create a service that treats every pup like family.</p>
+                    <p>I started MenloBark because I'm passionate about caring for dogs while their pet parents are away. As an entrepreneur at heart, I combined my love for dogs with my business spirit to create a service that treats every pup like family.</p>
                     <p>Your furry friend will receive lots of love, attention, playtime, and cuddles in our big backyard where they can run, play, and relax!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services">
         <div class="container">
             <h2>Our Services</h2>
@@ -832,20 +714,15 @@
                         <p>Lots of affection, belly rubs, and quality time. Plus, access to our big backyard for outdoor fun and relaxation!</p>
                     </div>
                 </div>
-                
                 <div class="services-photos">
                     <div class="service-photo-frame">
                         <div class="service-photo-inner">
-                            🦮
-                            <div class="service-photo-text">Add Photo</div>
-                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="service-photo-image"> -->
+                            <img src="images/L1.jpeg" alt="Dog" class="service-photo-image">
                         </div>
                     </div>
                     <div class="service-photo-frame">
                         <div class="service-photo-inner">
-                            🐕‍🦺
-                            <div class="service-photo-text">Add Photo</div>
-                            <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="service-photo-image"> -->
+                            <img src="images/Snow & Sky.jpeg" alt="Dog" class="service-photo-image">
                         </div>
                     </div>
                 </div>
@@ -853,7 +730,6 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section class="pricing">
         <div class="container">
             <h2>Pricing</h2>
@@ -866,60 +742,48 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
     <section class="reviews">
         <div class="container">
             <h2>What Dog Parents Say</h2>
             <div class="reviews-grid">
-                <!-- Review 1 with photos -->
                 <div class="review-container">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
                         <div class="review-text">
                             "Anjay and his family have taken care of our dog Yuzu many many times, and we have been deeply impressed by not only his level of care, but also his very communicative style of pet sitting. While other sitters will sometimes send a photo or two and a line about recent activities, we are always delighted to receive Anjay's daily 'pupdates' that include many photos and often a full paragraph recounting each day's events. If you are a chronic worrying pet parent like us, your doggo is in great hands with Anjay, and we highly recommend his service."
                         </div>
-                        <div class="review-author">— Yuzu's Owners</div>
+                        <div class="review-author">— Yuzu's Pet Parents</div>
                     </div>
                     <div class="review-photos">
                         <div class="review-photo-frame">
                             <div class="review-photo-inner">
-                                🐕
-                                <div class="review-photo-text">Add Photo</div>
-                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                                <img src="images/Y Belly.jpg" alt="Yuzu" class="review-photo-image">
                             </div>
                         </div>
                         <div class="review-photo-frame">
                             <div class="review-photo-inner">
-                                🐶
-                                <div class="review-photo-text">Add Photo</div>
-                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                                <img src="images/Y Cuddle.jpg" alt="Yuzu" class="review-photo-image">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Review 2 with photos -->
                 <div class="review-container">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
                         <div class="review-text">
                             "Leaving our dog, Charlie, is always hard, but Anjay made the entire experience stress-free and wonderful. The absolute best part was the communication. We received detailed daily updates, with photos and cute little videos, which instantly put our minds at ease. Knowing that Charlie was happy, playing, and getting all the snuggles he needed made our trip so much more relaxing. Beyond the perfect updates, Anjay is incredibly kind and treated Charlie like his own. He followed every single one of our instructions—from the feeding schedule to the walking times—without missing a beat. He clearly loves what he does, and his dedication truly went above and beyond our expectations. If you are looking for a dog sitter who is reliable, communicative, and genuinely cares about your pet, stop searching! If you live in the bay area, you absolutely must book Anjay!"
                         </div>
-                        <div class="review-author">— Charlie's Owners</div>
+                        <div class="review-author">— Charlie's Pet Parents</div>
                     </div>
                     <div class="review-photos">
                         <div class="review-photo-frame">
                             <div class="review-photo-inner">
-                                🦮
-                                <div class="review-photo-text">Add Photo</div>
-                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                                <img src="images/C Flight.jpg" alt="Charlie" class="review-photo-image">
                             </div>
                         </div>
                         <div class="review-photo-frame">
                             <div class="review-photo-inner">
-                                🐕‍🦺
-                                <div class="review-photo-text">Add Photo</div>
-                                <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="review-photo-image"> -->
+                                <img src="images/C Dance.jpg" alt="Charlie" class="review-photo-image">
                             </div>
                         </div>
                     </div>
@@ -928,81 +792,44 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
     <section class="gallery">
         <div class="container">
             <h2>Happy Pups Gallery 📸</h2>
             <div class="gallery-grid">
-                <!-- Photo 1 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🐕
-                            <div class="gallery-placeholder-text">Add Photo 1</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/C Fort.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
-
-                <!-- Photo 2 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🐶
-                            <div class="gallery-placeholder-text">Add Photo 2</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/C Sleep.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
-
-                <!-- Photo 3 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🦮
-                            <div class="gallery-placeholder-text">Add Photo 3</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/C Snuggle.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
-
-                <!-- Photo 4 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🐕‍🦺
-                            <div class="gallery-placeholder-text">Add Photo 4</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/Y Fun.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
-
-                <!-- Photo 5 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🐩
-                            <div class="gallery-placeholder-text">Add Photo 5</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/Y Play.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
-
-                <!-- Photo 6 -->
                 <div class="gallery-item">
                     <div class="gallery-inner">
-                        <div class="gallery-placeholder">
-                            🐕
-                            <div class="gallery-placeholder-text">Add Photo 6</div>
-                        </div>
-                        <!-- To add: <img src="YOUR_IMAGE_URL" alt="Dog" class="gallery-image"> -->
+                        <img src="images/Y Rub mom.jpg" alt="Dog" class="gallery-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
@@ -1065,21 +892,30 @@
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer day care services?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer day care services for dogs who need care during the day while their pet parents are at work or running errands. Your dog will enjoy playtime, walks, meals, and plenty of attention in our home and big backyard. Day care rates are available upon request - please contact us for pricing and availability.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
                     <span>Why did you start this business?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    I started MenloBark because I genuinely love dogs and find so much joy in caring for them while their owners are away. Knowing that families can relax on their trips while their furry friends are happy and well-cared-for brings me great satisfaction. I'm also an entrepreneur at heart, so I combined my passion for dogs with my love of business to create something meaningful. Every dog that stays with me becomes part of my extended family!
+                    I started MenloBark because I genuinely love dogs and find so much joy in caring for them while their pet parents are away. Knowing that families can relax on their trips while their furry friends are happy and well-cared-for brings me great satisfaction. I'm also an entrepreneur at heart, so I combined my passion for dogs with my love of business to create something meaningful. Every dog that stays with me becomes part of my extended family!
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2>Book Your Dog's Stay</h2>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
+            <form class="contact-form" action="https://formspree.io/f/xjkpkann" method="POST">
                 <div class="form-group">
                     <label for="ownerName">Your Name *</label>
                     <input type="text" id="ownerName" name="ownerName" required>
@@ -1164,7 +1000,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p><strong>MenloBark Dog Sitting</strong></p>
@@ -1180,20 +1015,6 @@
             
             answer.classList.toggle('active');
             toggle.classList.toggle('active');
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            alert('Thank you for your booking request! We will contact you soon at ' + data.contactEmail + ' to confirm the details.');
-            
-            event.target.reset();
         }
     </script>
 </body>
