@@ -111,31 +111,31 @@
 
         .about-images {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .about-photo-frame {
-            width: 200px;
-            height: 200px;
+            width: 320px;
+            height: 320px;
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
             transition: all 0.3s ease;
         }
 
         .about-photo-frame:hover {
-            transform: rotate(2deg) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            transform: rotate(2deg) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
         .about-photo-inner {
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, #FFE5E5 0%, #E8F5FF 100%);
-            border-radius: 5px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -170,7 +170,7 @@
         .services-with-photos {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
@@ -183,29 +183,30 @@
 
         .services-photos {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .service-photo-frame {
-            width: 250px;
+            width: 380px;
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
             transition: all 0.3s ease;
         }
 
         .service-photo-frame:hover {
-            transform: rotate(-2deg) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            transform: rotate(-2deg) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
         .service-photo-inner {
             width: 100%;
             padding-bottom: 75%;
             background: linear-gradient(135deg, #FFF9E6 0%, #FFE5E5 100%);
-            border-radius: 5px;
+            border-radius: 8px;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -321,13 +322,13 @@
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .review-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .review-card {
@@ -367,34 +368,34 @@
 
         .review-photos {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .review-photo-frame {
-            width: 200px;
+            width: 280px;
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
             transition: all 0.3s ease;
         }
 
         .review-photo-frame:hover {
-            transform: rotate(-2deg) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            transform: rotate(-2deg) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
         .review-photo-frame:nth-child(even):hover {
-            transform: rotate(2deg) scale(1.05);
+            transform: rotate(2deg) scale(1.03);
         }
 
         .review-photo-inner {
             width: 100%;
             padding-bottom: 100%;
             background: linear-gradient(135deg, #FFF9E6 0%, #E8F5FF 100%);
-            border-radius: 5px;
+            border-radius: 8px;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -425,27 +426,27 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
         }
 
         .gallery-item {
             position: relative;
             width: 100%;
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
             transition: all 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05) rotate(-1deg);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.28);
         }
 
         .gallery-item:nth-child(even):hover {
-            transform: scale(1.05) rotate(1deg);
+            transform: scale(1.03) rotate(1deg);
         }
 
         .gallery-inner {
@@ -453,7 +454,7 @@
             padding-bottom: 100%;
             position: relative;
             background: linear-gradient(135deg, #E8F5FF 0%, #FFE5E5 100%);
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
         }
 
@@ -636,11 +637,18 @@
             .reviews-grid {
                 grid-template-columns: 1fr;
             }
-            .about-photo-frame,
-            .service-photo-frame,
+            .about-photo-frame {
+                width: 280px;
+                height: 280px;
+            }
+            .service-photo-frame {
+                width: 320px;
+            }
             .review-photo-frame {
-                width: 150px;
-                height: 150px;
+                width: 240px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
     </style>
@@ -897,6 +905,16 @@
                 </div>
                 <div class="faq-answer">
                     Yes! We offer day care services for dogs who need care during the day while their pet parents are at work or running errands. Your dog will enjoy playtime, walks, meals, and plenty of attention in our home and big backyard. Day care rates are available upon request - please contact us for pricing and availability.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you train dogs?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    While we don't offer formal dog training services, many pet parents have noticed positive behavioral improvements in their dogs after staying with us! We maintain consistent house rules and boundaries—for example, dogs are not allowed in bedrooms, on beds, or in bathrooms. Through gentle, consistent reinforcement of these boundaries during their stay, dogs naturally learn good manners and respect for household spaces. It's a bonus benefit of staying at MenloBark! However, if your dog needs professional training, we recommend working with a certified dog trainer for best results.
                 </div>
             </div>
 
