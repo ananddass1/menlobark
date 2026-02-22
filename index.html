@@ -784,6 +784,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="review-container">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-text">
+                            "We've had Anjay care for Snow and Skye multiple times, and we truly couldn't be happier. Our two dogs have completely different personalities: Snow, our Samoyed, is playful, social, and loves everyone she meets, while Skye, our Shiba Inu, is more aloof and cat-like - skittish at first and only affectionate on her own terms. What really stands out is how thoughtfully Anjay adapts to each of them. He gives Snow all the playtime and attention she thrives on, while patiently earning Skye's trust with treats and the space she needs to warm up. We also really appreciate how communicative Anjay is. His daily updates give us total peace of mind, and he always asks thoughtful questions and clarifies details about their routines and behaviors. Caring for two dogs with such different sizes and temperaments isn't easy, but Anjay handles it effortlessly. They always come home happy, relaxed, and clearly well loved."
+                        </div>
+                        <div class="review-author">— Snow & Skye's Pet Parents</div>
+                    </div>
+                    <div class="review-photos">
+                        <div class="review-photo-frame">
+                            <div class="review-photo-inner">
+                                <img src="images/Snow-Sky.jpeg" alt="Snow and Skye" class="review-photo-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -941,15 +957,10 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Book Your Dog's Stay</h2>
-            <form class="contact-form" action="https://formspree.io/f/xjkpkann" method="POST">
+            <form class="contact-form" action="https://formspree.io/f/xjkpkann" method="POST" onsubmit="return validateForm()">
                 <div class="form-group">
                     <label for="ownerName">Your Name *</label>
                     <input type="text" id="ownerName" name="ownerName" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="dogName">Dog's Name *</label>
-                    <input type="text" id="dogName" name="dogName" required>
                 </div>
 
                 <div class="form-row">
@@ -963,57 +974,24 @@
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="breed">Breed *</label>
-                        <input type="text" id="breed" name="breed" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="size">Size *</label>
-                        <select id="size" name="size" required>
-                            <option value="">Select size</option>
-                            <option value="small">Small (under 25 lbs)</option>
-                            <option value="medium">Medium (25-50 lbs)</option>
-                            <option value="large">Large (50-100 lbs)</option>
-                            <option value="xlarge">Extra Large (over 100 lbs)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="age">Age of Dog *</label>
-                        <input type="text" id="age" name="age" placeholder="e.g., 3 years" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pottyTrained">Potty Trained? *</label>
-                        <select id="pottyTrained" name="pottyTrained" required>
-                            <option value="">Select option</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                            <option value="mostly">Mostly</option>
-                        </select>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label for="indoorOutdoor">Indoor or Outdoor Dog? *</label>
-                    <select id="indoorOutdoor" name="indoorOutdoor" required>
+                    <label for="pottyTrained">Potty Trained? *</label>
+                    <select id="pottyTrained" name="pottyTrained" required>
                         <option value="">Select option</option>
-                        <option value="indoor">Indoor</option>
-                        <option value="outdoor">Outdoor</option>
-                        <option value="both">Both</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="mostly">Mostly</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="behaviors">Common Behaviors & Personality *</label>
-                    <textarea id="behaviors" name="behaviors" placeholder="Tell us about your dog's personality, behaviors, likes, dislikes, and any special notes..." required></textarea>
+                    <label for="behaviors">Tell us about your dog: name, age, breed, size, specific needs, etc. *</label>
+                    <textarea id="behaviors" name="behaviors" placeholder="Example: Luna is a 3-year-old Golden Retriever, about 60 lbs. She's friendly and energetic, loves fetch, and needs her anxiety medication twice daily..." required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="contactPhone">Your Phone Number *</label>
-                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                    <input type="tel" id="contactPhone" name="contactPhone" pattern="[\d\s\-\+\(\)]{10,}" title="Please enter a valid phone number (at least 10 digits)" required>
                 </div>
 
                 <div class="form-group">
@@ -1041,6 +1019,43 @@
             
             answer.classList.toggle('active');
             toggle.classList.toggle('active');
+        }
+
+        function validateForm() {
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const phone = document.getElementById('contactPhone').value;
+            const email = document.getElementById('contactEmail').value;
+
+            // Validate that start date is before or equal to end date
+            if (startDate > endDate) {
+                alert('Please make sure your start date is before your end date.');
+                return false;
+            }
+
+            // Validate that start date is not in the past
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (startDate < today) {
+                alert('Please select a start date that is today or in the future.');
+                return false;
+            }
+
+            // Validate phone number (at least 10 digits)
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10) {
+                alert('Please enter a valid phone number with at least 10 digits.');
+                return false;
+            }
+
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            return true;
         }
     </script>
 </body>
