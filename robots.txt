@@ -1,0 +1,32 @@
+# MenloBark robots.txt
+# Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# ChatGPT
+User-agent: ChatGPT-User
+Allow: /
+
+# Claude
+User-agent: ClaudeBot
+Allow: /
+
+# GPTBot (OpenAI)
+User-agent: GPTBot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap location
+Sitemap: https://menlobark.us/sitemap.xml
