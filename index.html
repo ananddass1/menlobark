@@ -44,7 +44,7 @@
         "name": "MenloBark Dog Sitting",
         "description": "Professional dog sitting services in Menlo Park, Palo Alto, Atherton and the Bay Area. We provide overnight dog care, daily walks, playtime, and daily photo updates.",
         "url": "https://menlobark.us",
-        "telephone": "",
+        "email": "menlobark@gmail.com",
         "image": "https://menlobark.us/images/CPet.JPG",
         "priceRange": "$45-$70",
         "address": {
@@ -752,80 +752,74 @@
         .contact h2 {
             font-size: 2.5em;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .contact-form {
-            max-width: 700px;
+        .contact-info-box {
+            max-width: 500px;
             margin: 0 auto;
             background: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
+        .contact-tagline {
             color: #333;
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #FFD93D;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #FF6B35;
-            box-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);
-            color: white;
-            padding: 15px 50px;
-            border: none;
-            border-radius: 50px;
             font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            width: 100%;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        .submit-button:hover {
-            background: linear-gradient(135deg, #0099CC 0%, #00D9FF 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        .contact-list {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .contact-list li {
+            color: #333;
+            font-size: 1.1em;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .email-icon {
+            font-size: 2em;
+        }
+
+        .contact-email a {
+            color: #FF6B35;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-email a:hover {
+            color: #00D9FF;
+            text-decoration: underline;
+        }
+
+        .contact-note {
+            color: #666;
+            font-size: 1em;
+            margin-top: 10px;
         }
 
         footer {
@@ -1216,50 +1210,21 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Book Your Dog's Stay</h2>
-            <form class="contact-form" action="https://formspree.io/f/xjkpkann" method="POST" onsubmit="return validateForm()">
-                <div class="form-group">
-                    <label for="ownerName">Your Name *</label>
-                    <input type="text" id="ownerName" name="ownerName" required>
+            <div class="contact-info-box">
+                <p class="contact-tagline">Ready to book or have questions? Send us an email with the following info:</p>
+                <ul class="contact-list">
+                    <li>📅 <strong>Start and end dates</strong> for your dog's stay</li>
+                    <li>🐕 <strong>About your dog:</strong> name, age, breed, and size</li>
+                    <li>🚽 <strong>Is your dog potty trained?</strong></li>
+                    <li>📝 <strong>Specific needs or behaviors</strong> we should know about</li>
+                    <li>📞 <strong>Your name and phone number</strong></li>
+                </ul>
+                <div class="contact-email">
+                    <span class="email-icon">📧</span>
+                    <a href="mailto:menlobark@gmail.com">menlobark@gmail.com</a>
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="startDate">Start Date *</label>
-                        <input type="date" id="startDate" name="startDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="endDate">End Date *</label>
-                        <input type="date" id="endDate" name="endDate" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="pottyTrained">Potty Trained? *</label>
-                    <select id="pottyTrained" name="pottyTrained" required>
-                        <option value="">Select option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="mostly">Mostly</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="behaviors">Tell us about your dog: name, age, breed, size, specific needs, etc. *</label>
-                    <textarea id="behaviors" name="behaviors" placeholder="Example: Luna is a 3-year-old Golden Retriever, about 60 lbs. She's friendly and energetic, loves fetch, and needs her anxiety medication twice daily..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactPhone">Your Phone Number *</label>
-                    <input type="tel" id="contactPhone" name="contactPhone" pattern="[\d\s\-\+\(\)]{10,}" title="Please enter a valid phone number (at least 10 digits)" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactEmail">Your Email Address *</label>
-                    <input type="email" id="contactEmail" name="contactEmail" required>
-                </div>
-
-                <button type="submit" class="submit-button">Submit Booking Request</button>
-            </form>
+                <p class="contact-note">We typically respond within 24 hours</p>
+            </div>
         </div>
     </section>
 
@@ -1278,43 +1243,6 @@
             
             answer.classList.toggle('active');
             toggle.classList.toggle('active');
-        }
-
-        function validateForm() {
-            const startDate = new Date(document.getElementById('startDate').value);
-            const endDate = new Date(document.getElementById('endDate').value);
-            const phone = document.getElementById('contactPhone').value;
-            const email = document.getElementById('contactEmail').value;
-
-            // Validate that start date is before or equal to end date
-            if (startDate > endDate) {
-                alert('Please make sure your start date is before your end date.');
-                return false;
-            }
-
-            // Validate that start date is not in the past
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            if (startDate < today) {
-                alert('Please select a start date that is today or in the future.');
-                return false;
-            }
-
-            // Validate phone number (at least 10 digits)
-            const phoneDigits = phone.replace(/\D/g, '');
-            if (phoneDigits.length < 10) {
-                alert('Please enter a valid phone number with at least 10 digits.');
-                return false;
-            }
-
-            // Validate email format
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                return false;
-            }
-
-            return true;
         }
     </script>
 </body>
